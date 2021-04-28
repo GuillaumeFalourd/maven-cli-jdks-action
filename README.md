@@ -1,6 +1,6 @@
-# maven-cli-jdks-action
+# Maven CLI JDKs Action
 
-Maven CLI Action with JDK 8, 11, 13, 14 and 15
+Maven CLI Action with JDK 8, 11, 12, 13, 14, 15 and 16
 
 ## Workflow Demo
 
