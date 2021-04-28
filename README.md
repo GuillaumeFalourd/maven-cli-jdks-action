@@ -1,6 +1,6 @@
 # Maven CLI JDKs Action
 
-A Github Action to execute Maven CLI commands using JDK 8, 11, 12, 13, 14, 15 or 16. On the current repository directory, or in a specific one.
+Github Action wrapping Maven CLI to run any Maven commands using JDK 8, 11, 12, 13, 14, 15 or 16. On the current repository directory, or in a specific one.
 
 ## Workflow Demo
 
@@ -26,7 +26,7 @@ jobs:
       env:
         DIRECTORY: java # Not mandatory (run on the repo root directory if not informed)
       with:
-        lifecycle: 'clean package test'
+        commands: 'clean package test'
 ```
 
 ## How does it work?

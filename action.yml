@@ -3,8 +3,8 @@ name: 'Maven CLI JDKs Action'
 description: 'Github Action to execute Maven CLI commands using different JDKs'
 
 inputs:
-    lifecycle:
-        description: 'Maven lifecycles'
+    commands:
+        description: 'Maven commands'
         required: true
         default: 'clean package'
 
@@ -12,7 +12,7 @@ runs:
     using: 'docker'
     image: 'Dockerfile'
     args:
-        - ${{ inputs.lifecycle }}
+        - ${{ inputs.commands }}
 
 branding:
     icon: 'package'
