@@ -1,15 +1,19 @@
 name: 'Maven CLI JDKs Action'
-description: 'Use Maven CLI with JDK 8, 11, 13, 14 and 15'
-branding:
-    icon: 'package'
-    color: 'blue'
+
+description: 'Github Action to execute Maven CLI commands using different JDKs'
+
 inputs:
     lifecycle:
         description: 'Maven lifecycles'
         required: true
         default: 'clean package'
+
 runs:
     using: 'docker'
     image: 'Dockerfile'
     args:
         - ${{ inputs.lifecycle }}
+
+branding:
+    icon: 'package'
+    color: 'blue'
