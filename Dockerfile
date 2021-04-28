@@ -1,4 +1,4 @@
-FROM maven:3.6-openjdk-14-slim
+FROM maven:3.8.1-openjdk-15-slim
 
 COPY entrypoint.sh /entrypoint.sh
 
