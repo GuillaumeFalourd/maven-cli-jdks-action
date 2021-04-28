@@ -2,7 +2,9 @@
 
 ![maven-cli-jdks-action](https://user-images.githubusercontent.com/22433243/116424068-999f4c00-a817-11eb-84ab-3733a2686e0a.png)
 
-Github Action wrapping Maven CLI to run any Maven commands using JDK 8, 11, 12, 13, 14, 15 or 16. On the current repository directory, or in a specific one.
+Github Action wrapping Maven CLI to run any Maven commands using JDK 8, 11, 13, 14, 15, 16 or 17 based on [Maven DockerHub](https://hub.docker.com/_/maven).
+
+Those comands can be executed on the current repository directory, or in a specific one.
 
 ## Workflow Demo
 
@@ -63,12 +65,6 @@ uses: GuillaumeFalourd/maven-cli-action@jdk8
 uses: GuillaumeFalourd/maven-cli-jdks-action@main
 ```
 
-### For OpenJDK 12
-
-```bash
-uses: GuillaumeFalourd/maven-cli-jdks-action@jdk12
-```
-
 ### For OpenJDK 13
 
 ```bash
@@ -91,4 +87,10 @@ uses: GuillaumeFalourd/maven-cli-jdks-action@jdk15
 
 ```bash
 uses: GuillaumeFalourd/maven-cli-jdks-action@jdk16
+```
+
+### For OpenJDK 17
+
+```bash
+uses: GuillaumeFalourd/maven-cli-jdks-action@jdk17
 ```
