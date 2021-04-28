@@ -2,7 +2,9 @@
 
 ![maven-cli-jdks-action](https://user-images.githubusercontent.com/22433243/116424068-999f4c00-a817-11eb-84ab-3733a2686e0a.png)
 
-Github Action wrapping Maven CLI to run any Maven commands using JDK 8, 11, 12, 13, 14, 15 or 16. On the current repository directory, or in a specific one.
+Github Action wrapping Maven CLI to run any Maven commands using JDK 8, 11, 13, 14, 15, 16 or 17 based on [Maven DockerHub](https://hub.docker.com/_/maven).
+
+Those commands can be executed on the current repository directory, or in a specific one using a $DIRECTORY_PATH environment variable.
 
 ## Workflow Demo
 
@@ -10,25 +12,25 @@ Github Action wrapping Maven CLI to run any Maven commands using JDK 8, 11, 12, 
 name: CI
 
 on:
-  push:
-    branches: [ master ]
-  pull_request:
-    branches: [ master ]
+ push:
+   branches: [ master ]
+ pull_request:
+   branches: [ master ]
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-    # Checkout your repository under $GITHUB_WORKSPACE, so your job can access your directories and files
-    - uses: actions/checkout@v2
+ build:
+   runs-on: ubuntu-latest
+   steps:
+   # Checkout your repository under $GITHUB_WORKSPACE, so your job can access your directories and files
+   - uses: actions/checkout@v2
 
-    # Runs a set of commands using the runners shell
-    - name: Run maven commands
-      uses: GuillaumeFalourd/maven-cli-jdks-action@main # Default is JDK 11
-      env:
-        DIRECTORY: java # Not mandatory (run on the repo root directory if not informed)
-      with:
-        commands: 'clean package test'
+   # Runs a set of commands using the runners shell
+   - name: Run maven commands
+     uses: GuillaumeFalourd/maven-cli-jdks-action@main # Default is JDK 11
+     env:
+       DIRECTORY_PATH: java # Not mandatory (run on the repo root directory if not informed)
+     with:
+       commands: 'clean package test'
 ```
 
 ## How does it work?
@@ -36,12 +38,12 @@ jobs:
 This workflow use a `Dockerfile` with `Maven` and a specific `JDK` installed to execute a Shell script file `entrypoint.sh` to perfom the following commands:
 
 ```bash
-if [[ -z $DIRECTORY ]]; 
+if [[ -z $DIRECTORY_PATH ]];
 then
-    echo "DIRECTORY env isn't set. Running in current directory"
+   echo "DIRECTORY_PATH env isn't set. Running in current directory"
 else
-    echo "Moving to specified directory path"
-    cd $DIRECTORY
+   echo "Moving to specified directory path"
+   cd $DIRECTORY_PATH
 fi
 
 echo "Executing command: mvn $1"
@@ -61,12 +63,6 @@ uses: GuillaumeFalourd/maven-cli-action@jdk8
 
 ```bash
 uses: GuillaumeFalourd/maven-cli-jdks-action@main
-```
-
-### For OpenJDK 12
-
-```bash
-uses: GuillaumeFalourd/maven-cli-jdks-action@jdk12
 ```
 
 ### For OpenJDK 13
@@ -91,4 +87,10 @@ uses: GuillaumeFalourd/maven-cli-jdks-action@jdk15
 
 ```bash
 uses: GuillaumeFalourd/maven-cli-jdks-action@jdk16
+```
+
+### For OpenJDK 17
+
+```bash
+uses: GuillaumeFalourd/maven-cli-jdks-action@jdk17
 ```
