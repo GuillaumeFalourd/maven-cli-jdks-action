@@ -1,5 +1,7 @@
 # Maven CLI JDKs Action
 
+![maven-cli-jdks-action](https://user-images.githubusercontent.com/22433243/116424068-999f4c00-a817-11eb-84ab-3733a2686e0a.png)
+
 Github Action wrapping Maven CLI to run any Maven commands using JDK 8, 11, 12, 13, 14, 15 or 16. On the current repository directory, or in a specific one.
 
 ## Workflow Demo
