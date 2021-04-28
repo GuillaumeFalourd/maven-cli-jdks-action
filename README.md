@@ -94,3 +94,7 @@ uses: GuillaumeFalourd/maven-cli-jdks-action@jdk16
 ```bash
 uses: GuillaumeFalourd/maven-cli-jdks-action@jdk17
 ```
+
+## Licensed
+
+This repository uses the [Apache License 2.0](https://github.com/GuillaumeFalourd/maven-cli-jdks-action/blob/main/LICENSE)
