@@ -4,7 +4,7 @@
 
 Github Action wrapping Maven CLI to run any Maven commands using JDK 8, 11, 13, 14, 15, 16 or 17 based on [Maven DockerHub](https://hub.docker.com/_/maven).
 
-Those comands can be executed on the current repository directory, or in a specific one.
+Those comands can be executed on the current repository directory, or in a specific one using a $DIRECTORY_PATH environment variable.
 
 ## Workflow Demo
 
@@ -28,7 +28,7 @@ jobs:
     - name: Run maven commands
       uses: GuillaumeFalourd/maven-cli-jdks-action@main # Default is JDK 11
       env:
-        DIRECTORY: java # Not mandatory (run on the repo root directory if not informed)
+        DIRECTORY_PATH: java # Not mandatory (run on the repo root directory if not informed)
       with:
         commands: 'clean package test'
 ```
@@ -38,12 +38,12 @@ jobs:
 This workflow use a `Dockerfile` with `Maven` and a specific `JDK` installed to execute a Shell script file `entrypoint.sh` to perfom the following commands:
 
 ```bash
-if [[ -z $DIRECTORY ]]; 
+if [[ -z $DIRECTORY_PATH ]]; 
 then
-    echo "DIRECTORY env isn't set. Running in current directory"
+    echo "DIRECTORY_PATH env isn't set. Running in current directory"
 else
     echo "Moving to specified directory path"
-    cd $DIRECTORY
+    cd $DIRECTORY_PATH
 fi
 
 echo "Executing command: mvn $1"
