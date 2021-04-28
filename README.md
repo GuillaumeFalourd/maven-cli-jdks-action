@@ -4,7 +4,7 @@
 
 Github Action wrapping Maven CLI to run any Maven commands using JDK 8, 11, 13, 14, 15, 16 or 17 based on [Maven DockerHub](https://hub.docker.com/_/maven).
 
-Those comands can be executed on the current repository directory, or in a specific one using a $DIRECTORY_PATH environment variable.
+Those commands can be executed on the current repository directory, or in a specific one using a $DIRECTORY_PATH environment variable.
 
 ## Workflow Demo
 
