@@ -1,4 +1,4 @@
-FROM maven:3.6-openjdk-11-slim
+FROM maven:3.6-jdk-8-alpine
 
 COPY entrypoint.sh /entrypoint.sh
 
