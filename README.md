@@ -1,6 +1,6 @@
 # Maven CLI JDKs Action
 
-Maven CLI Action with JDK 8, 11, 12, 13, 14, 15 and 16
+A Github Action to execute Maven CLI commands using JDK 8, 11, 12, 13, 14, 15 or 16. On the current repository directory, or in a specific one.
 
 ## Workflow Demo
 
