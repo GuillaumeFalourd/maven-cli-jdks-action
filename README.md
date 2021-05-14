@@ -1,7 +1,5 @@
 # Maven CLI JDKs Action
 
-<a href="https://github.com/search?q=GuillaumeFalourd+maven-cli-jdks-action+path%3A.github%2Fworkflows+language%3AYAML&type=code" target="_blank" title="Public workflows that use this action."><img src="https://img.shields.io/endpoint?url=https%3A%2F%2Fapi-git-master.endbug.vercel.app%2Fapi%2Fgithub-actions%2Fused-by%3Faction%3DGuillaumeFalourd%2Fmaven-cli-jdks-action%26badge%3Dtrue" alt="Public workflows that use this action."></a>
-
 ![maven-cli-jdks-action](https://user-images.githubusercontent.com/22433243/116424068-999f4c00-a817-11eb-84ab-3733a2686e0a.png)
 
 Github Action wrapping Maven CLI to run any Maven commands using JDK 8, 11, 13, 14, 15, 16 or 17 based on [Maven DockerHub](https://hub.docker.com/_/maven).
